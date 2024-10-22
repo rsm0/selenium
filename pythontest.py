@@ -33,13 +33,18 @@ another4_button.click()
 time.sleep(2)
 
 
-text = driver.find_element(By.XPATH,"/html/body/div[20]/div/div/div/div[1]/div/div/div[2]/div/div[2]/div/div/div/div/section/div[2]/div[2]/div[1]/div/span").text
+code = driver.find_element(By.XPATH,"/html/body/div[20]/div/div/div/div[1]/div/div/div[2]/div/div[2]/div/div/div/div/section/div[2]/div[2]/div[1]/div/span").text
 
-print(text)
+print(code)
 
 
-driver.get("https://www.stats.gov.sa/ar/job-details/" + text)
+driver.get("https://www.stats.gov.sa/ar/job-details/" + code)
 
+name = driver.find_element(By.XPATH,"/html/body/div[2]/div/div[3]/div[1]/div[3]/div[3]/div/section/div/div/div/div[1]/h1/span").text
+description = driver.find_element(By.XPATH,"/html/body/div[2]/div/div[3]/div[1]/div[3]/div[3]/div/section/div/div/div/div[2]/div").text
+
+print(name)
+print(description)
 
 input("اضغط أي مفتاح لإغلاق المتصفح...")
 driver.quit()
