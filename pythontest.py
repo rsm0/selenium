@@ -43,6 +43,23 @@ driver.get("https://www.stats.gov.sa/ar/job-details/" + code)
 name = driver.find_element(By.XPATH,"/html/body/div[2]/div/div[3]/div[1]/div[3]/div[3]/div/section/div/div/div/div[1]/h1/span").text
 description = driver.find_element(By.XPATH,"/html/body/div[2]/div/div[3]/div[1]/div[3]/div[3]/div/section/div/div/div/div[2]/div").text
 
+
+driver.get("https://docs.google.com/forms/d/e/1FAIpQLSeQn7RWmdhhpD_a6_HbnFf8qtN4LrLZkXtj7ExXoR-RCmnseA/viewform")
+
+
+input_code = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input"))
+    )
+input_code.send_keys(code)
+
+
+
+input_description = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div[2]/textarea"))
+    )
+input_description.send_keys(description)
+
+print(input2)
 print(name)
 print(description)
 
